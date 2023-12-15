@@ -1,0 +1,94 @@
+/* Remove default margin */
+body,
+h2,
+p {
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-family: var(--font-title);
+  color: var(--white);
+  line-height: 1.1;
+}
+
+p {
+  font-family: var(--font-text);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--white);
+  padding-top: 5px;
+}
+
+/* CARD COMPONENT */
+
+.card {
+  width: 15.625rem;
+  height: 20rem;
+  overflow: hidden;
+  border-radius: 0.625rem;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+  margin: 20px 20px;
+}
+
+.card-background {
+  object-fit: cover;
+  object-position: center;
+  max-width: 100%;
+  height: 100%;
+}
+
+.card-content {
+  position: sticky;
+  bottom:0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: flex-end;
+  background: linear-gradient(
+    180deg,
+    hsla(0, 0%, 0%, 0) 0%,
+    hsla(0, 0%, 0%, 0.3) 10%,
+    hsl(0, 0%, 0%) 100%
+  );
+  padding: 10px;
+}
+
+.card:hover {
+  cursor: pointer;
+  scale : 1.05;
+  animation: shake 0.5s;
+}
+
+hr {
+  margin: 0;
+  height: 5px;
+  border: none;
+  background-color: var(--brand-color);
+}
+
+.card-title {
+  width: fit-content;
+  width: -moz-fit-content; /* Prefijo necesario para Firefox  */
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-2px) rotate(-2deg); }
+  50% { transform: translateX(2px) rotate(2deg); }
+  75% { transform: translateX(-2px) rotate(-2deg); }
+  100% { transform: translateX(0); }
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 8.75rem;
+    height: 12rem;
+    margin: 0;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+}
+

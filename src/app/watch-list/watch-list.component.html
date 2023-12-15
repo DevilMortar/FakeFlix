@@ -1,0 +1,12 @@
+<head>
+  <title>Watch List - Fakeflix</title>
+</head>
+
+<h1>Watch List</h1>
+<div class="card-container">
+  <ng-container *ngIf="this.mediaArray.length > 0">
+    <ng-container *ngFor="let media of this.mediaArray">
+      <app-media [media]="media"></app-media>
+    </ng-container>
+  </ng-container>
+</div>

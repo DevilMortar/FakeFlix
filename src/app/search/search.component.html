@@ -1,0 +1,34 @@
+<head>
+  <title>Search - Fakeflix</title>
+</head>
+
+<form (ngSubmit)="onSubmit()" [formGroup]="searchForm">
+  <div class="wrap">
+    <div class="search">
+      <input type="text" class="searchTerm" placeholder="What are you looking for?" [formControl]="searchCtrl">
+      <button type="submit" [disabled]="" class="searchButton">🔎</button>
+    </div>
+  </div>
+</form>
+
+  <ng-container *ngIf="this.mediaArray.length > 0">
+    <div class="card-container">
+        <ng-container *ngFor="let media of this.mediaArray">
+          <app-media [media]="media"></app-media>
+        </ng-container>
+    </div>
+  </ng-container>
+
+<div class="container">
+  <ng-container *ngIf="this.mediaArray.length == 0">
+    <div class="no-results">
+      <p>No results for your search : "{{this.searchCtrl.value}}"</p>
+      <p>Suggestions :</p>
+      <ul>
+        <li>Check your spelling</li>
+        <li>Try a different keyword</li>
+        <li>Try a more general keyword</li>
+      </ul>
+    </div>
+  </ng-container>
+</div>

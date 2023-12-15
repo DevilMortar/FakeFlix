@@ -1,0 +1,65 @@
+<ng-container *ngIf="this.media !== null">
+  <div class="container">
+    <div class="col-3">
+      <h1>{{this.media.Title}}</h1>
+      <ng-container *ngIf="this.media.imdbRating !== -1">
+        <div class="row">
+          <div class="rating">
+            <span class="stars" style="--rating:{{this.media.imdbRating}};"></span>
+            <span class="score">{{this.media.imdbRating/2}}</span>
+          </div>
+          <ng-container>
+            <button class="like-btn" (click)="this.likeMedia()"><i class="{{this.media.isLiked ? 'fas' : 'far'}} fa-heart"></i></button>
+          </ng-container>
+        </div>
+      </ng-container>
+      <div class="row">
+        <p class="label">Type</p>
+        <p class="value">{{this.media.Type}}</p>
+      </div>
+      <ng-container *ngIf="this.media.Type === 'series'">
+        <div class="row">
+          <p class="label">Seasons</p>
+          <p class="value">{{this.media.totalSeasons}}</p>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="this.media.Type === 'movie'">
+        <div class="row">
+          <p class="label">Duration</p>
+          <p class="value">{{this.media.Runtime}}</p>
+        </div>
+      </ng-container>
+      <div class="row">
+        <p class="label">Genre</p>
+        <p class="value">{{this.media.Genre}}</p>
+      </div>
+      <div class="row">
+        <p class="label">Year</p>
+        <p class="value">{{this.media.Year}}</p>
+      </div>
+      <div class="row">
+        <p class="label">Director</p>
+        <p class="value">{{this.media.Director}}</p>
+      </div>
+      <div class="row">
+        <p class="label">Actors</p>
+        <p class="value">{{this.media.Actors}}</p>
+      </div>
+      <ng-container *ngIf="this.media?.Plot !== 'N/A'">
+          <p class="plot">{{this.media.Plot}}</p>
+      </ng-container>
+    </div>
+    <div class="col-4 center">
+      <img class="poster" src="{{this.media.Poster}}" alt="Poster">
+    </div>
+  </div>
+</ng-container>
+
+
+<div class="scroll-card-container">
+  <ng-container *ngIf="this.similarMediaArray.length > 0">
+    <ng-container *ngFor="let media of this.similarMediaArray">
+      <app-media [media]="media"></app-media>
+    </ng-container>
+  </ng-container>
+</div>

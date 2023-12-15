@@ -1,1 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+  height: 100%;
+}
+
+body {
+  background-color: var(--body-color);
+  margin: 0;
+  height: 100%;
+}
+
+:root {
+  /* Colors */
+  --brand-color: #d52727;
+  --header-color: hsl(0, 0%, 7%);
+  --body-color-dark: hsl(0, 0%, 10%);
+  --body-color: hsl(0, 0%, 10%);
+  --body-color-light: hsl(0, 0%, 15%);
+  --black: hsl(0, 0%, 0%);
+  --white: hsl(0, 0%, 100%);
+  --pink: hsl(296, 100%, 50%);
+  /* Fonts */
+  --font-title: "Montserrat", sans-serif;
+  --font-text: "Lato", sans-serif;
+  /* card */
+  --card-size: 15.625rem;
+}
+
+/* Global Styles */
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 15.625rem);
+  justify-content: center; /* Centrer horizontalement */
+  margin: 20px auto; /* Auto pour centrer horizontalement */
+  grid-gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(auto-fit,8.75rem);
+    margin: 20px auto; /* Auto pour centrer horizontalement */
+  }
+}
+
+.scroll-card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: left;
+    margin: 20px 50px;
+    transition: overflow 0.3s ease; /* Add smooth transition for better user experience */
+    overflow-x: auto;
+    gap: 10px;
+}

@@ -1,0 +1,160 @@
+.logo {
+  max-height: 175px;
+  max-width: 175px;
+  aspect-ratio: auto;
+  align-content: center;
+  margin-left: 20px;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 50px;
+}
+
+.title {
+  text-align: center;
+  color: var(--white);
+  font-size: 3.5rem;
+  font-family: 'Roboto', sans-serif;
+  margin: 0 0 50px 0;
+}
+
+h2 {
+  display: block;
+  font-size: 1.3rem;
+  line-height: 1.2em;
+  margin: 5px 0;
+  min-height: 1.8em;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  color: white;
+}
+
+.user {
+  border: 5px solid var(--body-color);
+  border-radius: 25px;
+  color: grey;
+  width: 250px;
+  height: 250px;
+}
+
+.user:hover {
+  cursor: pointer;
+  border-color: var(--white);
+  color: var(--white);
+}
+
+.user-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 23px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.page {
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--body-color-dark) 0%,
+    var(--body-color) 10%,
+    var(--body-color) 90%,
+    var(--body-color-dark) 100%
+  );
+}
+
+.user-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 250px);
+  grid-gap: 20px;
+  justify-content: center; /* Centrer horizontalement */
+  margin: 20px 0; /* Auto pour centrer horizontalement */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 85%;
+}
+
+/*
+
+@media screen and (max-width: 1000px) {
+  .frame {
+    width: 200px;
+    height: 200px;
+  }
+  .user-container {
+    max-width: 500px;
+    width: 100%;
+  }
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .frame {
+    width: 150px;
+    height: 150px;
+  }
+  .user-container {
+    max-width: 400px;
+  }
+  .title {
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .frame {
+    width: 125px;
+    height: 125px;
+  }
+  .user {
+    margin-bottom: 30px;
+  }
+  .user-container {
+    max-width: 350px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .frame {
+    width: 100px;
+    height: 100px;
+  }
+  .user-container {
+    max-width: 300px;
+  }
+  .user {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .frame {
+    width: 75px;
+    height: 75px;
+  }
+  .user-container {
+    max-width: 250px;
+  }
+  .user {
+    margin-bottom: 10px;
+  }
+  .h1 {
+    font-size: 1.5rem;
+  }
+}
+
+*/

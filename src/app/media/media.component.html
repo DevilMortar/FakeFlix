@@ -1,0 +1,15 @@
+<article class="card" (click)="onCardClick()">
+  <img
+    class="card-background"
+    src="{{this.media?.Poster}}"
+    width="1920"
+    height="2193"
+  />
+  <div class="card-content">
+      <h2 class="card-title">{{this.media?.Title}}</h2>
+      <hr>
+      <p class="card-description">
+        {{this.media?.Year}} | {{this.media?.Type}}
+      </p>
+  </div>
+</article>
