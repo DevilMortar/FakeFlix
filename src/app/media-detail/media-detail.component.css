@@ -143,3 +143,26 @@ h1 {
 .score {
   margin-left: 5px;
 }
+
+/* Media Adjustments */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .col-3 {
+    width: 100%;
+  }
+
+  .col-4 {
+    width: 100%;
+  }
+
+  .poster {
+    width: 100%;
+  }
+
+  .plot {
+    max-width: 100%;
+  }
+}

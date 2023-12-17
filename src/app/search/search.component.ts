@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import {DataService} from "../data.service";
 import {Media} from "../media";
 import {FormControl, UntypedFormGroup, Validators} from "@angular/forms";
-import {NavComponent} from "../header/nav.component";
+import {NavComponent} from "../nav/nav.component";
+import {waitForAsync} from "@angular/core/testing";
 
 @Component({
   selector: 'app-search',
@@ -12,6 +13,7 @@ import {NavComponent} from "../header/nav.component";
 export class SearchComponent {
 
   mediaArray : Array<Media> = new Array<Media>();
+  mediaFetched: number = -1;
   searchForm: UntypedFormGroup;
   searchCtrl: FormControl<string>;
   constructor(private dataService: DataService) {
@@ -22,15 +24,20 @@ export class SearchComponent {
   }
   ngOnInit() {
     this.searchCtrl.valueChanges.subscribe(
-      val => this.dataService.searchMediaByName(val).subscribe(
-        (val:Array<Media>) => {
-          console.log(val);
-          if (val.length > 0) {
-            this.mediaArray = val;
+      val => {
+        this.mediaFetched = -1;
+        this.dataService.searchMediaByName(val).subscribe(
+          (val:Array<Media>) => {
+            console.log(val);
+            if (val.length > 0) {
+              this.mediaFetched = val.length;
+              this.mediaArray = val;
+            }
+            else this.mediaArray = [];
+            this.mediaFetched = 0;
           }
-          else this.mediaArray = [];
-        }
-      )
+        )
+      }
     );
   }
 

@@ -11,16 +11,12 @@
   </div>
 </form>
 
-  <ng-container *ngIf="this.mediaArray.length > 0">
-    <div class="card-container">
-        <ng-container *ngFor="let media of this.mediaArray">
-          <app-media [media]="media"></app-media>
-        </ng-container>
-    </div>
-  </ng-container>
+<ng-container *ngIf="this.mediaArray.length !== 0">
+  <app-card-container [mediaArray]="mediaArray"></app-card-container>
+</ng-container>
 
 <div class="container">
-  <ng-container *ngIf="this.mediaArray.length == 0">
+  <ng-container *ngIf="this.mediaArray.length == 0 && this.searchCtrl.value !== ''">
     <div class="no-results">
       <p>No results for your search : "{{this.searchCtrl.value}}"</p>
       <p>Suggestions :</p>

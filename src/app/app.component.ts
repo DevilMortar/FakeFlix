@@ -13,7 +13,7 @@ export class AppComponent {
   constructor(private router: Router) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        // Check the current route to determine whether to show the header
+        // Check the current route to determine whether to show the nav
         this.showHeader = this.shouldShowHeader();
       }
     });

@@ -4,7 +4,7 @@ import {UserService} from "../user.service";
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })

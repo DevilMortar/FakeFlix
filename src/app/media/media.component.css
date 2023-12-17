@@ -28,7 +28,8 @@ p {
   overflow: hidden;
   border-radius: 0.625rem;
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
-  margin: 20px 20px;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease;
 }
 
 .card-background {
@@ -57,7 +58,6 @@ p {
 .card:hover {
   cursor: pointer;
   scale : 1.05;
-  animation: shake 0.5s;
 }
 
 hr {
@@ -69,15 +69,6 @@ hr {
 
 .card-title {
   width: fit-content;
-  width: -moz-fit-content; /* Prefijo necesario para Firefox  */
-}
-
-@keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-2px) rotate(-2deg); }
-  50% { transform: translateX(2px) rotate(2deg); }
-  75% { transform: translateX(-2px) rotate(-2deg); }
-  100% { transform: translateX(0); }
 }
 
 @media screen and (max-width: 768px) {

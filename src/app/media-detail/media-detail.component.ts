@@ -22,17 +22,21 @@ export class MediaDetailComponent {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(
-      (params) => this.dataService.getMediaById(params.get('id') ?? '').subscribe(
-        (val : any) => {
-          this.media = val;
-          // Take the first word of the title and search for it
-          const mostImportantWord:string[] = this.dataService.extractMostImportantWord(this?.media?.Title ?? '');
-          if (this.media !== null)
-          this.dataService.searchSimilarMedia(this.media).subscribe(
-            (val:Array<Media>) => this.similarMediaArray = val
-          );
-        }
-      )
+      (params) => {
+        this.similarMediaArray = new Array<Media>();
+        this.media = null;
+        this.dataService.getMediaById(params.get('id') ?? '').subscribe(
+          (val : any) => {
+            this.media = val;
+            // Take the first word of the title and search for it
+            const mostImportantWord:string[] = this.dataService.extractMostImportantWord(this?.media?.Title ?? '');
+            if (this.media !== null)
+              this.dataService.searchSimilarMedia(this.media).subscribe(
+                (val:Array<Media>) => this.similarMediaArray = val
+              );
+          }
+        )
+      }
     )
   }
 

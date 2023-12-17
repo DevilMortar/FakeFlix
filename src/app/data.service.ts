@@ -82,7 +82,6 @@ export class DataService {
         });
 
         const sortedResults = uniqueResults.sort((a, b) => { return b.Title - a.Title });
-        console.log(sortedResults);
 
         return sortedResults.map((media: any) => ({
           Title: media.Title,
@@ -167,12 +166,6 @@ export class DataService {
    */
   extractMostImportantWord(title:string) : Array<string> {
     const filteredWords = this.filterTitleWords(title);
-
-    if (filteredWords[0] !== null) {
-      console.log(`Most important words : ${filteredWords[0]}, ${filteredWords[1]}`);
-    } else {
-      console.log('No significant words found in the title.');
-    }
 
     // Choose the first remaining word as the most important
     if (filteredWords.length > 0) {

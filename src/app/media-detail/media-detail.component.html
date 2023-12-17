@@ -1,5 +1,5 @@
-<ng-container *ngIf="this.media !== null">
-  <div class="container">
+<div class="container">
+  <ng-container *ngIf="this.media !== null">
     <div class="col-3">
       <h1>{{this.media.Title}}</h1>
       <ng-container *ngIf="this.media.imdbRating !== -1">
@@ -52,14 +52,13 @@
     <div class="col-4 center">
       <img class="poster" src="{{this.media.Poster}}" alt="Poster">
     </div>
-  </div>
-</ng-container>
-
-
-<div class="scroll-card-container">
-  <ng-container *ngIf="this.similarMediaArray.length > 0">
-    <ng-container *ngFor="let media of this.similarMediaArray">
-      <app-media [media]="media"></app-media>
-    </ng-container>
+  </ng-container>
+  <ng-container *ngIf="this.media === null">
+    <div class="fa-3x">
+      <i class="fas fa-spinner fa-spin"></i>
+    </div>
   </ng-container>
 </div>
+
+
+<app-slide-card-container [mediaArray]="this.similarMediaArray"></app-slide-card-container>
