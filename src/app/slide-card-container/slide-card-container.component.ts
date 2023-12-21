@@ -24,7 +24,7 @@ export class SlideCardContainerComponent {
 
   /*On Hover listener for the left and right buttons*/
   @HostListener('mouseenter', ['$event.target'])
-  onMouseEnter(target: any) {
+  onMouseEnter() {
     this.changeScrollButtonVisibility();
   }
 

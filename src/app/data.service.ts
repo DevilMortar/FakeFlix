@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {catchError, delay, filter, forkJoin, map, Observable, of, tap} from "rxjs";
+import {filter, forkJoin, map, Observable} from "rxjs";
 import {Media} from "./media";
 import {MediaDetail} from "./media-detail";
 import {UserService} from "./user.service";

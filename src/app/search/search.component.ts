@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import {DataService} from "../data.service";
 import {Media} from "../media";
 import {FormControl, UntypedFormGroup, Validators} from "@angular/forms";
-import {NavComponent} from "../nav/nav.component";
-import {waitForAsync} from "@angular/core/testing";
 
 @Component({
   selector: 'app-search',
