@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {catchError, filter, forkJoin, map, Observable, of, tap} from "rxjs";
+import {catchError, delay, filter, forkJoin, map, Observable, of, tap} from "rxjs";
 import {Media} from "./media";
 import {MediaDetail} from "./media-detail";
 import {UserService} from "./user.service";
@@ -21,7 +21,6 @@ export class DataService {
   searchMediaByName(name: string) : Observable<Media[]> {
     const url = "https://www.omdbapi.com/?apikey=c1ce66fb&s=" + name;
     return this.http.get(url).pipe(
-      // Map the response to either the transformed data or an empty array
       map((data: any) => {
         if (data.Response === 'True') {
           return data.Search.map((media: Media) => ({
@@ -32,7 +31,7 @@ export class DataService {
             Poster: (media.Poster === 'N/A') ? 'https://via.placeholder.com/300x400.png?text=No+Image' : media.Poster
           }));
         } else {
-          return []; // Return an empty array if the condition is not met
+          return [];
         }
       })
     );
