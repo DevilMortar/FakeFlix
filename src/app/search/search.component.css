@@ -35,7 +35,13 @@
 
 /*Resize the wrap to see the search bar change!*/
 .wrap{
-  width: 500px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.search {
+  width: 75%;
+  margin: 20px 0 0 0;
 }
 
 .container{
@@ -56,16 +62,4 @@ ul {
 li {
   margin-bottom: 5px;
   margin-left: 30px;
-}
-
-@media screen and (max-width: 768px) {
-  .wrap{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-  .search {
-    width: 75%;
-    margin: 20px 0 0 0;
-  }
 }
