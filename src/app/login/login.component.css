@@ -12,7 +12,9 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin: 20px 50px;
+  position: absolute;
+  top : 25px;
+  width: 100%;
 }
 
 .title {
@@ -58,7 +60,11 @@ h2 {
 }
 
 .page {
-  height: 100%;
+  margin: 0;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background: linear-gradient(
     to bottom,
     var(--body-color-dark) 0%,
@@ -84,16 +90,13 @@ h2 {
   height: 85%;
 }
 
-/*
-
 @media screen and (max-width: 1000px) {
-  .frame {
+  .user {
     width: 200px;
     height: 200px;
   }
   .user-container {
-    max-width: 500px;
-    width: 100%;
+    grid-template-columns: repeat(auto-fit, 200px);
   }
   .title {
     font-size: 2.5rem;
@@ -101,13 +104,13 @@ h2 {
   }
 }
 
-@media screen and (max-width: 600px) {
-  .frame {
+@media screen and (max-width: 800px) {
+  .user {
     width: 150px;
     height: 150px;
   }
   .user-container {
-    max-width: 400px;
+    grid-template-columns: repeat(auto-fit, 150px);
   }
   .title {
     font-size: 2rem;
@@ -116,45 +119,30 @@ h2 {
 }
 
 @media screen and (max-width: 500px) {
-  .frame {
-    width: 125px;
-    height: 125px;
-  }
   .user {
-    margin-bottom: 30px;
-  }
-  .user-container {
-    max-width: 350px;
-  }
-}
-
-@media screen and (max-width: 350px) {
-  .frame {
     width: 100px;
     height: 100px;
   }
   .user-container {
-    max-width: 300px;
+    grid-template-columns: repeat(auto-fit, 100px);
   }
   .user {
     margin-bottom: 20px;
   }
+  .h1 {
+    font-size: 1.2rem;
+  }
 }
 
 @media screen and (max-width: 300px) {
-  .frame {
+  .user {
     width: 75px;
     height: 75px;
   }
   .user-container {
-    max-width: 250px;
+    grid-template-columns: repeat(auto-fit, 75px);
   }
   .user {
     margin-bottom: 10px;
   }
-  .h1 {
-    font-size: 1.5rem;
-  }
 }
-
-*/
