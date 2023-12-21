@@ -4,11 +4,11 @@
 
 <h1>Watch List</h1>
 
-<ng-container *ngIf="this.mediaFetched !== 0">
+<ng-container *ngIf="!this.dataFetched || this.mediaArray.length > 0">
   <app-card-container [mediaArray]="this.mediaArray"></app-card-container>
 </ng-container>
 
-<ng-container *ngIf="this.mediaFetched === 0">
+<ng-container *ngIf="this.dataFetched && this.mediaArray.length == 0">
   <h2>Your watch list is empty</h2>
   <h2><i class="fas fa-frown"></i></h2>
 </ng-container>
