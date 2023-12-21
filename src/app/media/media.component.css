@@ -57,7 +57,7 @@ p {
 
 .card:hover {
   cursor: pointer;
-  scale : 1.05;
+  scale : 1.03;
 }
 
 hr {
@@ -71,10 +71,10 @@ hr {
   width: fit-content;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
   .card {
     width: 8.75rem;
-    height: 12rem;
+    height: 11rem;
     margin: 0;
   }
 
