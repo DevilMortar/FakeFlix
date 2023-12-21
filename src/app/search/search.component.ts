@@ -13,7 +13,7 @@ import {waitForAsync} from "@angular/core/testing";
 export class SearchComponent {
 
   mediaArray : Array<Media> = new Array<Media>();
-  mediaFetched: number = -1;
+  dataFetched: boolean = false;
   searchForm: UntypedFormGroup;
   searchCtrl: FormControl<string>;
   constructor(private dataService: DataService) {
@@ -25,16 +25,17 @@ export class SearchComponent {
   ngOnInit() {
     this.searchCtrl.valueChanges.subscribe(
       val => {
-        this.mediaFetched = -1;
+        this.mediaArray = [];
+        this.dataFetched = false;
         this.dataService.searchMediaByName(val).subscribe(
           (val:Array<Media>) => {
             console.log(val);
             if (val.length > 0) {
-              this.mediaFetched = val.length;
+              this.dataFetched = true;
               this.mediaArray = val;
             }
             else this.mediaArray = [];
-            this.mediaFetched = 0;
+            this.dataFetched = true;
           }
         )
       }
