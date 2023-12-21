@@ -7,7 +7,8 @@
 </div>
 
 <h1>The Star Wars saga</h1>
-<app-slide-card-container [mediaArray]="this.mediaArrayA"></app-slide-card-container>
+<!-- <app-slide-card-container [mediaArray]="this.mediaArray"></app-slide-card-container> -->
+<app-slide-card-container [mediaArray]="mediaArrayA" [loading]="dataFetchedA"></app-slide-card-container>
 
 <h1>The Harry Potter saga</h1>
-<app-slide-card-container [mediaArray]="this.mediaArrayB"></app-slide-card-container>
+<app-slide-card-container [mediaArray]="this.mediaArrayB" [loading]="dataFetchedB"></app-slide-card-container>
