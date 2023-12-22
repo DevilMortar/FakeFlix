@@ -12,6 +12,10 @@ export class LoginComponent {
 
   constructor(private userService: UserService, private router: Router) { }
 
+  ngOnInit(): void {
+    this.userService.logout();
+  }
+
   selectUser(user: any) {
     this.userService.setConnectedUser(user);
     this.router.navigate(['/search']).then(r => console.log(" User logged in!"));
