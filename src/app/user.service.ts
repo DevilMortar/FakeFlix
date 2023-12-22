@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Observable, Subject} from "rxjs";
+import {Route, Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -9,12 +10,21 @@ export class UserService {
 
   userConnected$ = this.userConnectedSubject.asObservable();
 
-  constructor() {
+  constructor(private router : Router) {
     this.initConnectedUser();
+  }
+
+  logout() {
+    localStorage.removeItem('connectedUser');
+    this.router.navigate(['/login']);
   }
 
   initConnectedUser() {
     const username = localStorage.getItem('connectedUser') ?? 'Guest';
+    if (username === 'Guest') {
+      this.logout();
+      return;
+    }
     this.setConnectedUser(username);
   }
 
