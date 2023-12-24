@@ -22,6 +22,6 @@ export class LoginComponent {
    */
   selectUser(user: any) {
     this.userService.setConnectedUser(user);
-    this.router.navigate(['/home']).then(r => console.log("User logged in!"));
+    this.router.navigate(['/home']).then();
   }
 }
