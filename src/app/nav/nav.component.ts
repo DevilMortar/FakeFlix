@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {DataService} from "../data.service";
 import {UserService} from "../user.service";
 import {Router} from "@angular/router";
 
@@ -12,7 +11,7 @@ export class NavComponent {
   connectedUser: string = "Guest";
   userPicture: string = "https://via.placeholder.com/150x150.png?text=No+Image";
 
-  constructor(private userService: UserService, private router: Router) {
+  constructor(private userService: UserService) {
   }
 
   ngOnInit(): void {
