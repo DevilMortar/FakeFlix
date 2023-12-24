@@ -10,16 +10,18 @@ import {UserService} from "./user.service";
 })
 export class DataService {
 
-  constructor(private http: HttpClient, private userService: UserService) {
+  private apiKey = 'c1ce66fb';
 
-  }
+  constructor(private http: HttpClient, private userService: UserService) {}
+
+  // ---------------------------------- API Request ---------------------------------- //
 
   /***
     * Search for media by name
     * @param name the name of the media to search
    */
   searchMediaByName(name: string) : Observable<Media[]> {
-    const url = "https://www.omdbapi.com/?apikey=c1ce66fb&s=" + name;
+    const url = "https://www.omdbapi.com/?apikey=" + this.apiKey + "&s=" + name;
     return this.http.get(url).pipe(
       map((data: any) => {
         if (data.Response === 'True') {
@@ -51,7 +53,7 @@ export class DataService {
     }
 
     // Send 2 requests to the API, one for each word
-    const url = "https://www.omdbapi.com/?apikey=c1ce66fb&s=";
+    const url = "https://www.omdbapi.com/?apikey=" + this.apiKey + "&s=";
 
     return forkJoin([
       this.http.get(url + a),
@@ -81,6 +83,11 @@ export class DataService {
         });
 
         const sortedResults = uniqueResults.sort((a, b) => { return b.Title - a.Title });
+        // Delete the initial media from the results
+        const index = sortedResults.findIndex((media: any) => media.imdbID === media.imdbID);
+        if (index > -1) {
+          sortedResults.splice(index, 1);
+        }
 
         return sortedResults.map((media: any) => ({
           Title: media.Title,
@@ -99,7 +106,7 @@ export class DataService {
     * @param id the IMDb ID of the media to get
    */
   getMediaById(id: string) : Observable<MediaDetail> {
-    const url = "https://www.omdbapi.com/?apikey=c1ce66fb&i=" + id;
+    const url = "https://www.omdbapi.com/?apikey=" + this.apiKey + "&i=" + id;
     return this.http.get(url).pipe(
       filter((data: any) => data.Response === 'True'),
       map((data: any) => ({
@@ -117,7 +124,7 @@ export class DataService {
           Language: data.Language,
           Country: data.Country,
           Awards: data.Awards,
-          imdbRating: (data.imdbRating === 'N/A') ? -1 : data.imdbRating,
+          imdbRating: (data.imdbRating === 'N/A') ? -1 : data.imdbRating/2,
           totalSeasons: (data.totalSeasons === 'N/A') ? 0 : data.totalSeasons,
           isLiked: this.userService.isUserLikedMedia(data.imdbID),
           Response: data.Response
@@ -136,8 +143,11 @@ export class DataService {
     return forkJoin(mediaObservables);
   }
 
+  // ---------------------------------- Similar Media Algorithm ---------------------------------- //
+
   /***
-    * Filter the words in a title to extract the most important ones
+    * Filter the words in a title to extract the most important ones based on a fk stupid algorithm.
+    * Unfortunately, this is the best I could come up with because I can only search by title and not by genre or anything else.
     * @param title the title to filter the words from
    */
   filterTitleWords(title: string) : Array<string> {
