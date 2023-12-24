@@ -8,7 +8,7 @@ import {Media} from "../media";
 })
 export class SlideCardContainerComponent {
   @Input() mediaArray: Array<Media> = new Array<Media>();
-  @Input() loading: boolean = false;
+  @Input() loaded: boolean = false;
   container : any;
   leftButton : any;
   rightButton : any;

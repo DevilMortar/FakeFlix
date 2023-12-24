@@ -13,6 +13,7 @@ import {UserService} from "../user.service";
 export class MediaDetailComponent {
   media: MediaDetail | null = null;
   similarMediaArray: Array<Media> = new Array<Media>();
+  loaded: boolean = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,6 +24,7 @@ export class MediaDetailComponent {
   ngOnInit(): void {
     this.route.paramMap.subscribe(
       (params) => {
+        this.loaded = false;
         this.similarMediaArray = new Array<Media>();
         this.media = null;
         this.dataService.getMediaById(params.get('id') ?? '').subscribe(
@@ -34,6 +36,7 @@ export class MediaDetailComponent {
               this.dataService.searchSimilarMedia(this.media).subscribe(
                 (val:Array<Media>) => this.similarMediaArray = val
               );
+            this.loaded = true;
           }
         )
       }
