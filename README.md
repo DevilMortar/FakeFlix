@@ -26,6 +26,7 @@ It is used each time you need to get movies or series data.
 It allows to search a media by name, to get the details of a media by its ID and to get similar movies or series by the name of a media.
 
 ⚠️ With the API used, you can only search by title, not by ID.
+
 ⚠️ With the free API key, you can only make 1000 requests per day.
 
 ### User Service
