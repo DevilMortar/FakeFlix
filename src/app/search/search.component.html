@@ -12,7 +12,7 @@
 </form>
 
 <ng-container *ngIf="this.mediaArray.length !== 0 || !this.dataFetched && this.searchCtrl.value !== ''">
-  <app-card-container [mediaArray]="mediaArray" [loading]="this.dataFetched"></app-card-container>
+  <app-card-container [mediaArray]="mediaArray" [loaded]="this.dataFetched"></app-card-container>
 </ng-container>
 
 <div class="container">

@@ -16,12 +16,17 @@ export class HomeComponent {
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
+    // To display some example carousel on home page we will get some data from the API
+
+    // Get the star wars saga
     this.dataService.searchMediaByName("Star Wars").subscribe(
       (val:Array<Media>) => {
         this.mediaArrayA = val;
         this.dataFetchedA = true;
       }
     );
+
+    // Get the harry potter saga
     this.dataService.searchMediaByName("Harry Potter").subscribe(
       (val:Array<Media>) => {
         this.mediaArrayB = val;

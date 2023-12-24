@@ -10,10 +10,10 @@ import {FormControl, UntypedFormGroup, Validators} from "@angular/forms";
 })
 export class SearchComponent {
 
-  mediaArray : Array<Media> = new Array<Media>();
-  dataFetched: boolean = false;
-  searchForm: UntypedFormGroup;
-  searchCtrl: FormControl<string>;
+  mediaArray : Array<Media> = new Array<Media>(); // Array of media objects
+  dataFetched: boolean = false; // Flag to indicate if data has been fetched or is being fetched
+  searchForm: UntypedFormGroup; // Form group for search form
+  searchCtrl: FormControl<string>; // Form control for search input
   constructor(private dataService: DataService) {
     this.searchCtrl = new FormControl('', { validators: [Validators.required], nonNullable: true });
     this.searchForm = new UntypedFormGroup({
@@ -21,6 +21,7 @@ export class SearchComponent {
     });
   }
   ngOnInit() {
+    // Subscribe to value changes of search input to fetch data from API
     this.searchCtrl.valueChanges.subscribe(
       val => {
         this.mediaArray = [];
@@ -40,6 +41,9 @@ export class SearchComponent {
     );
   }
 
+  /***
+    * Function to submit the search form and fetch data from API
+   */
   onSubmit() {
     this.dataService.searchMediaByName(this.searchCtrl.value).subscribe((data: any) => {
       this.mediaArray = data;

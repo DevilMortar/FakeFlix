@@ -5,8 +5,8 @@
 </ng-container>
 
 <div class="main">
-    <button (click)="this.scroll(true)" class="btn-slide btn-slide-left"><i class="fas fa-chevron-left"></i></button>
-    <button (click)="this.scroll(false)" class="btn-slide btn-slide-right"><i class="fas fa-chevron-right"></i></button>
+    <button (click)="this.slide(true)" class="btn-slide btn-slide-left"><i class="fas fa-chevron-left"></i></button>
+    <button (click)="this.slide(false)" class="btn-slide btn-slide-right"><i class="fas fa-chevron-right"></i></button>
   <div class="slide-card-container">
     <ng-container *ngFor="let media of this.mediaArray">
       <app-media [media]="media"></app-media>

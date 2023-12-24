@@ -11,9 +11,9 @@ import {UserService} from "../user.service";
   styleUrls: ['./media-detail.component.css']
 })
 export class MediaDetailComponent {
-  media: MediaDetail | null = null;
-  similarMediaArray: Array<Media> = new Array<Media>();
-  loaded: boolean = true;
+  media: MediaDetail | null = null; // The media detail to display
+  similarMediaArray: Array<Media> = new Array<Media>(); // The similar media list to display
+  loaded: boolean = true; // True if the similar media are loaded, false otherwise
 
   constructor(
     private route: ActivatedRoute,
@@ -22,6 +22,7 @@ export class MediaDetailComponent {
   { }
 
   ngOnInit(): void {
+    // Subscribe to the route parameter to get the media id and load the media detail data
     this.route.paramMap.subscribe(
       (params) => {
         this.loaded = false;
@@ -41,7 +42,10 @@ export class MediaDetailComponent {
     )
   }
 
-  likeMedia() {
+  /**
+   * Change the like status of the media (like or dislike)
+   */
+  changeMediaLikeStatus() {
     console.log('Liked media with id ' + this.media?.imdbID);
     // Store the liked media in the local storage, for the user "mathias"
     if (this.media !== null) {

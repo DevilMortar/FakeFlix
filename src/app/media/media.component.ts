@@ -12,10 +12,13 @@ export class MediaComponent {
 
 constructor(private router: Router) { }
 
+  /***
+    * This method is called when the user clicks on the card.
+    * It navigates to the media details page.
+    */
   onCardClick() {
     if (this.media?.imdbID) {
-      // Utilisez le service Router pour naviguer vers la page /media/:id
-      this.router.navigate(['/media', this.media.imdbID]);
+      this.router.navigate(['/media', this.media.imdbID]).then();
     }
   }
 }

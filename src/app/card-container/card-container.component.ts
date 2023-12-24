@@ -7,6 +7,6 @@ import {Media} from "../media";
   styleUrls: ['./card-container.component.css']
 })
 export class CardContainerComponent {
-  @Input() mediaArray: Array<Media> = new Array<Media>();
-  @Input() loading: boolean = false;
+  @Input() mediaArray: Array<Media> = new Array<Media>(); // Array of Media to display
+  @Input() loaded: boolean = false; // If the data has been loaded from the API or if it is still loading
 }

@@ -12,23 +12,20 @@ export class NavComponent {
   connectedUser: string = "Guest";
   userPicture: string = "https://via.placeholder.com/150x150.png?text=No+Image";
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router) {
+  }
 
   ngOnInit(): void {
+    // Subscribe to the userConnected$ observable to know when the user connected changes
     this.userService.userConnected$.subscribe(user => {
       console.log("New connection: " + user);
       this.connectedUser = user;
       this.userPicture = "../assets/images/" + this.connectedUser + ".jpg";
     });
+    // Get the initial current connected user
     this.connectedUser = this.userService.getCurrentConnectedUser();
     if (this.connectedUser !== "Guest") {
       this.userPicture = "../assets/images/" + this.connectedUser + ".jpg";
     }
-  }
-
-  navigateTo(event: Event): void {
-    const selectedValue = (event.target as HTMLSelectElement).value;
-    // Add logic to navigate to the selected route based on the value
-    this.router.navigate([selectedValue]).then(r => console.log("Navigation done"));
   }
 }

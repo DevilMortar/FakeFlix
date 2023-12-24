@@ -16,6 +16,10 @@ export class LoginComponent {
     this.userService.logout();
   }
 
+  /***
+    * Set the user clicked as the connected user and navigate to the home page
+    * @param user
+   */
   selectUser(user: any) {
     this.userService.setConnectedUser(user);
     this.router.navigate(['/home']).then(r => console.log(" User logged in!"));
