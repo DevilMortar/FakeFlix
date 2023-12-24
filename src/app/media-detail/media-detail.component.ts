@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
 import {DataService} from "../data.service";
 import {MediaDetail} from "../media-detail";
 import {Media} from "../media";
@@ -30,8 +30,6 @@ export class MediaDetailComponent {
         this.dataService.getMediaById(params.get('id') ?? '').subscribe(
           (val : any) => {
             this.media = val;
-            // Take the first word of the title and search for it
-            const mostImportantWord:string[] = this.dataService.extractMostImportantWord(this?.media?.Title ?? '');
             if (this.media !== null)
               this.dataService.searchSimilarMedia(this.media).subscribe(
                 (val:Array<Media>) => this.similarMediaArray = val

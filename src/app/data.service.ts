@@ -159,7 +159,7 @@ export class DataService {
 
     // Most important word
     let filteredWords = words.filter(word => !commonWords.includes(word.toLowerCase()));
-    filteredWords = filteredWords.map(word => word.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,""));
+    filteredWords = filteredWords.map(word => word.replace(/[.,\/#!$%&;:{}=\-_`~()]/g,""));
     filteredWords = filteredWords.map(word => word.replace(/'s/g,""));
     filteredWords = filteredWords.filter(word => word.length > 2);
     if (filteredWords.length > 1) {
