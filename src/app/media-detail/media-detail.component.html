@@ -1,18 +1,21 @@
-<div class="container">
+<div class="container light">
   <ng-container *ngIf="this.media !== null">
     <div class="col-3">
       <h1>{{this.media.Title}}</h1>
-      <ng-container *ngIf="this.media.imdbRating !== -1">
         <div class="row">
+          <ng-container *ngIf="this.media.imdbRating !== -1">
           <div class="rating">
             <span class="stars" style="--rating:{{this.media.imdbRating}};"></span>
-            <span class="score">{{this.media.imdbRating/2}}</span>
+            <span class="score">{{this.media.imdbRating}}</span>
           </div>
-          <ng-container>
-            <button class="like-btn" (click)="this.likeMedia()"><i class="{{this.media.isLiked ? 'fas' : 'far'}} fa-heart"></i></button>
           </ng-container>
+          <ng-container *ngIf="this.media.imdbRating === -1">
+            <p class="value">Rating not available</p>
+          </ng-container>
+          <div>
+            <button class="like-btn" (click)="this.likeMedia()"><i class="{{this.media.isLiked ? 'fas' : 'far'}} fa-heart"></i></button>
+          </div>
         </div>
-      </ng-container>
       <div class="row">
         <p class="label">Type</p>
         <p class="value">{{this.media.Type}}</p>
@@ -60,5 +63,9 @@
   </ng-container>
 </div>
 
-
-<app-slide-card-container [mediaArray]="this.similarMediaArray"></app-slide-card-container>
+<ng-container *ngIf="this.similarMediaArray.length == 0 && this.loaded">
+  <div class="container">
+    <h1 class="center">No similar media found</h1>
+  </div>
+</ng-container>
+<app-slide-card-container [mediaArray]="this.similarMediaArray" [loaded]="this.loaded"></app-slide-card-container>

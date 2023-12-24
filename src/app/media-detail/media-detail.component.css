@@ -14,8 +14,12 @@ h1 {
 .container {
   display: flex;
   justify-content: center;
-  background-color: var(--body-color-light);
+  background-color: var(--body-color);
   padding: 20px;
+}
+
+.light {
+  background-color: var(--body-color-light);
 }
 
 .col-3 {
@@ -130,7 +134,7 @@ h1 {
 }
 
 .stars::after {
-  --percentage: calc(var(--rating) / 10 * 100%);
+  --percentage: calc(var(--rating) / 5 * 100%);
   content: "\2605\2605\2605\2605\2605"; /* Five full stars */
   font-size: 24px; /* Adjust the font size as needed */
   /* Color the first one in gold, the rest in grey */
