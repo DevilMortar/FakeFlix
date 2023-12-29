@@ -5,7 +5,7 @@
         <div class="row">
           <ng-container *ngIf="this.media.imdbRating !== -1">
           <div class="rating">
-            <span class="stars" style="--rating:{{this.media.imdbRating}};"></span>
+            <span class="stars" [attr.style.--rating]="this.media.imdbRating"></span>
             <span class="score">{{this.media.imdbRating}}</span>
           </div>
           </ng-container>
