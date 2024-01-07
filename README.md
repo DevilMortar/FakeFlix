@@ -17,7 +17,21 @@ The project is composed of 6 pages:
 - **Login** page (/login) : allows the user to log in to his FakeFlix profile
 - **Movie details** page (/media/{id}) : displays some information about a movie
 
-✍️ Notes : All the pages, all the CSS and all the services have been written by me, without using any external library or template.
+✍️ Notes : All the pages, and all the services have been written by me, without using any external library or template. Only the CSS framework Tailwind CSS has been used to style the project.
+
+### Implementation
+
+This project use all the notions of Angular that I have learned during my Angular course at ISEN.
+It uses the following notions:
+- Components
+- Services
+- Routing
+- HTTP requests / Use of an API
+- Observables and Subscriptions
+- Pipes
+- Input and Output
+- Forms
+- LocalStorage
 
 ### Data Service
 
@@ -25,7 +39,7 @@ The data service is a service that allows you to get the data from the API Open 
 It is used each time you need to get movies or series data.
 It allows to search a media by name, to get the details of a media by its ID and to get similar movies or series by the name of a media.
 
-⚠️ With the API used, you can only search by title, not by ID.
+⚠️ With the API used, you can only search by title and ID, not by genre or other.
 
 ⚠️ With the free API key, you can only make 1000 requests per day.
 
@@ -72,7 +86,7 @@ Run `ng serve`. Navigate to `http://localhost:4200/` to access the project and e
 
 #### Login
 
-⚠️ Login system is not secure, it's just a fake login system /!\
+⚠️ Login system is not secure, it's just a fake login system
 
 To use the website, you need to log in with one of the created profiles, like in Netflix.
 These profiles are static, so you can't create a new one.
@@ -119,8 +133,7 @@ This project uses the [Open Movie Database API](https://www.omdbapi.com/) to get
 - [Node.js](https://nodejs.org/en/)
 - [Angular](https://angular.io/)
 - [Font Awesome](https://fontawesome.com/)
-
-✍️ Notes : All the CSS apart from the Font Awesome icons has been written by me.
+- [Tailwind CSS](https://tailwindcss.com/)
 
 ## Contact
 
