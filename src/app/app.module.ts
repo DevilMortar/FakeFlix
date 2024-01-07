@@ -17,6 +17,7 @@ import { SlideCardContainerComponent } from './slide-card-container/slide-card-c
 import { CardContainerComponent } from './card-container/card-container.component';
 import { BottomNavComponent } from './bottom-nav/bottom-nav.component';
 import { HomeSectionComponent } from './home-section/home-section.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { HomeSectionComponent } from './home-section/home-section.component';
     SlideCardContainerComponent,
     CardContainerComponent,
     BottomNavComponent,
-    HomeSectionComponent
+    HomeSectionComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

@@ -10,24 +10,12 @@
     <!-- List of users -->
     <div class="my-2 mx-auto justify-center grid grid-cols-2 md:grid-cols-4 gap-2">
       <!-- User : Homer -->
-      <div class="group max-w-[120px] sm:max-w-[150px] xl:max-w-[200px] border-2 border-body-color rounded-3xl text-center text-gray font-bold text-2xl hover:cursor-pointer hover:text-white aspect-square" (click)="this.selectUser('homer')">
-        <img src="../../assets/images/homer.jpg" alt="logo" class="w-full h-full rounded-3xl object-cover object-center border-4 border-transparent transition duration-100 group-hover:border-white">
-        <h2 class="block mt-1">Homer</h2>
-      </div>
+      <app-user [name]="'Homer'" (eventOut)="this.onEvent($event)"></app-user>
       <!-- User : Geralt -->
-      <div class="group max-w-[120px] sm:max-w-[150px] xl:max-w-[200px] border-2 border-body-color rounded-3xl text-center text-gray font-bold text-2xl hover:cursor-pointer hover:text-white aspect-square" (click)="this.selectUser('geralt')">
-        <img src="../../assets/images/geralt.jpg" alt="logo" class="w-full h-full rounded-3xl object-cover object-center border-4 border-transparent transition duration-100 group-hover:border-white">
-        <h2 class="block mt-1">Geralt</h2>
-      </div>
+      <app-user [name]="'Geralt'" (eventOut)="this.onEvent($event)"></app-user>
       <!-- User : Rick -->
-      <div class="group max-w-[120px] sm:max-w-[150px] xl:max-w-[200px] border-2 border-body-color rounded-3xl text-center text-gray font-bold text-2xl hover:cursor-pointer hover:text-white aspect-square" (click)="this.selectUser('rick')">
-        <img src="../../assets/images/rick.jpg" alt="logo" class="w-full h-full rounded-3xl object-cover object-center border-4 border-transparent transition duration-100 group-hover:border-white">
-        <h2 class="block overflow-hidden mt-1">Rick</h2>
-      </div>
+      <app-user [name]="'Rick'" (eventOut)="this.onEvent($event)"></app-user>
       <!-- User : 김민재 -->
-      <div class="group max-w-[120px] sm:max-w-[150px] xl:max-w-[200px] border-2 border-body-color rounded-3xl text-center text-gray font-bold text-2xl hover:cursor-pointer hover:text-white aspect-square" (click)="this.selectUser('김민재')">
-        <img src="../../assets/images/김민재.jpg" alt="logo" class="w-full h-full rounded-3xl object-cover object-center border-4 border-transparent transition duration-100 group-hover:border-white">
-        <h2 class="block overflow-hidden mt-1">김민재</h2>
-      </div>
+      <app-user [name]="'김민재'" (eventOut)="this.onEvent($event)"></app-user>
     </div>
 </div>
