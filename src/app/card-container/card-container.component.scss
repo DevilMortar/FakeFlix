@@ -1,5 +1,5 @@
 .grid-auto-fit {
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     grid-template-columns: repeat(auto-fit, 15.625rem);
   }
   grid-template-columns: repeat(auto-fit, 8.75rem);
