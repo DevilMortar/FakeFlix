@@ -25,6 +25,10 @@ export class LoginComponent {
     this.router.navigate(['/home']).then();
   }
 
+  /***
+    * Listen the events from the User components
+   * @param event
+   */
   onEvent = (event: any) => {
     this.selectUser(event);
   }
