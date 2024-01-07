@@ -7,11 +7,10 @@ import {UserService} from "../user.service";
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent {
-  connectedUser: string = "Guest";
-  userPicture: string = "https://via.placeholder.com/150x150.png?text=No+Image";
+  connectedUser: string = "Guest"; // User connected
+  userPicture: string = "https://via.placeholder.com/150x150.png?text=No+Image"; // User picture
 
-  constructor(private userService: UserService) {
-  }
+  constructor(private userService: UserService) {}
 
   ngOnInit(): void {
     // Subscribe to the userConnected$ observable to know when the user connected changes

@@ -1,9 +1,11 @@
+<!-- If there is no media to display, show a spinner -->
 <ng-container *ngIf="this.mediaArray.length === 0 && !this.loaded">
   <div class="fa-3x">
     <i class="fas fa-spinner fa-spin"></i>
   </div>
 </ng-container>
 
+<!-- If there is media to display, show the carousel -->
 <div class="relative group">
     <button id="btn-slide-left" (click)="this.slide(true)" class="btn-slide group-hover:opacity-100 left-0"><i class="fas fa-chevron-left"></i></button>
     <button id="btn-slide-right" (click)="this.slide(false)" class="btn-slide group-hover:opacity-100 right-0"><i class="fas fa-chevron-right"></i></button>

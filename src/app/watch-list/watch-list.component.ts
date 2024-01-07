@@ -9,8 +9,8 @@ import {DataService} from "../data.service";
   styleUrls: ['./watch-list.component.scss']
 })
 export class WatchListComponent {
-  mediaArray : Array<Media> = new Array<Media>();
-  dataFetched : boolean = false;
+  mediaArray : Array<Media> = new Array<Media>(); // List of medias to display
+  dataFetched : boolean = false; // True if the data has been fetched from the server
   constructor(private userService: UserService, private dataService: DataService) {}
   ngOnInit() {
     // Get the list of ids of liked medias of the connected user

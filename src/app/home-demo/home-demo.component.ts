@@ -8,16 +8,15 @@ import {DataService} from "../data.service";
   styleUrls: ['./home-demo.component.css']
 })
 export class HomeDemoComponent implements OnInit {
-  @Input() title:string = 'Home Demo';
-  @Input() search:string = '';
-  mediaArray: Array<Media> = new Array<Media>();
-  dataFetched: boolean = false;
+  @Input() title:string = ''; // Title of the section
+  @Input() search:string = ''; // Search term to use in the API call
+  mediaArray: Array<Media> = new Array<Media>(); // Array of Media objects
+  dataFetched: boolean = false; // Flag to indicate if the data has been fetched from the API
 
-  constructor(private dataService: DataService) {
-  }
+  constructor(private dataService: DataService) {}
 
   ngOnInit() {
-      // Get the {{search}} saga
+      // Get the {{search}} results from the API
       this.dataService.searchMediaByName(this.search).subscribe(
         (val:Array<Media>) => {
           this.mediaArray = val;

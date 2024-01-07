@@ -4,10 +4,12 @@
 
 <h1 class="text-white text-center text-2xl font-bold mt-2">Watch List</h1>
 
+<!-- If data is not fetched or media array is not empty, show card container -->
 <ng-container *ngIf="!this.dataFetched || this.mediaArray.length > 0">
   <app-card-container [mediaArray]="this.mediaArray"></app-card-container>
 </ng-container>
 
+<!-- If data is fetched and media array is empty, show empty watch list message -->
 <ng-container *ngIf="this.dataFetched && this.mediaArray.length == 0">
   <div class="text-white text-center text-xl font-bold mt-5">
     <h2>Your watch list is empty</h2>

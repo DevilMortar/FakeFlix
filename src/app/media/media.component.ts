@@ -8,7 +8,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./media.component.scss']
 })
 export class MediaComponent {
-  @Input() media: Media | undefined;
+  @Input() media: Media | undefined; // The media object to display
 
 constructor(private router: Router) { }
 

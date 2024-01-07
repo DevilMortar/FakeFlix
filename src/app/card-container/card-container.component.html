@@ -1,9 +1,11 @@
+<!-- If media are loading, display a spinner -->
 <ng-container *ngIf="this.mediaArray.length === 0 && !this.loaded">
   <div class="fa-3x">
     <i class="fas fa-spinner fa-spin"></i>
   </div>
 </ng-container>
 
+<!-- If there are media to display, display them -->
 <div class="grid grid-auto-fit justify-center m-3 mx-5 gap-5">
   <ng-container *ngIf="this.mediaArray.length > 0">
     <ng-container *ngFor="let media of this.mediaArray">

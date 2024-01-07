@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './bottom-nav.component.html',
   styleUrls: ['./bottom-nav.component.css']
 })
-export class BottomNavComponent {
-
-}
+export class BottomNavComponent {}

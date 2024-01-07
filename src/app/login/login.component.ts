@@ -9,12 +9,10 @@ import {UserService} from "../user.service";
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  nUsers:number = 4;
-
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
-    this.userService.logout();
+    this.userService.logout(); // Logout the user when he arrives at the login page
   }
 
   /***

@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 import { SlideCardContainerComponent } from './slide-card-container/slide-card-container.component';
 import { CardContainerComponent } from './card-container/card-container.component';
 import { BottomNavComponent } from './bottom-nav/bottom-nav.component';
+import { HomeDemoComponent } from './home-demo/home-demo.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { BottomNavComponent } from './bottom-nav/bottom-nav.component';
     HomeComponent,
     SlideCardContainerComponent,
     CardContainerComponent,
-    BottomNavComponent
+    BottomNavComponent,
+    HomeDemoComponent
   ],
   imports: [
     BrowserModule,

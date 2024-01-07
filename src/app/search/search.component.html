@@ -2,6 +2,7 @@
   <title>Search - Fakeflix</title>
 </head>
 
+<!-- Search bar -->
 <form (ngSubmit)="onSubmit()" [formGroup]="searchForm">
   <div class="flex w-full justify-center">
     <div class="relative mt-4 mb-0 mx-8 flex h-8 w-full xl:w-3/4">
@@ -11,10 +12,12 @@
   </div>
 </form>
 
+<!-- Search results -->
 <ng-container *ngIf="this.mediaArray.length !== 0 || !this.dataFetched && this.searchCtrl.value !== ''">
   <app-card-container [mediaArray]="mediaArray" [loaded]="this.dataFetched"></app-card-container>
 </ng-container>
 
+<!-- No results -->
 <div class="flex justify-center">
   <ng-container *ngIf="this.mediaArray.length == 0 && this.dataFetched && this.searchCtrl.value !== ''">
     <div class="mt-6 text-white">
