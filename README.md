@@ -3,6 +3,8 @@
 This project has been created with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.10.
 Created by [Mathias CITRINI](https://www.linkedin.com/in/mathias-citrini/).
 
+✍️ Notes : All the pages, and all the services have been written by me, without using any external library or template. Only the CSS framework Tailwind CSS has been used to style the project.
+
 ## About the project
 
 ### Description
@@ -17,7 +19,7 @@ The project is composed of 6 pages:
 - **Login** page (/login) : allows the user to log in to his FakeFlix profile
 - **Movie details** page (/media/{id}) : displays some information about a movie
 
-✍️ Notes : All the pages, and all the services have been written by me, without using any external library or template. Only the CSS framework Tailwind CSS has been used to style the project.
+✍️ Notes : A mobile version (screen smaller than 1280px) of the website is available. The website is entirely responsive.
 
 ### Implementation
 
