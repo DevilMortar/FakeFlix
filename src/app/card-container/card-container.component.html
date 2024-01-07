@@ -4,7 +4,7 @@
   </div>
 </ng-container>
 
-<div class="card-container">
+<div class="grid grid-auto-fit justify-center m-5 gap-5">
   <ng-container *ngIf="this.mediaArray.length > 0">
     <ng-container *ngFor="let media of this.mediaArray">
       <app-media [media]="media"></app-media>

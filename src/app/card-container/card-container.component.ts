@@ -4,7 +4,7 @@ import {Media} from "../media";
 @Component({
   selector: 'app-card-container',
   templateUrl: './card-container.component.html',
-  styleUrls: ['./card-container.component.css']
+  styleUrls: ['./card-container.component.scss']
 })
 export class CardContainerComponent {
   @Input() mediaArray: Array<Media> = new Array<Media>(); // Array of Media to display
