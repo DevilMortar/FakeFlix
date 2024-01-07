@@ -1,59 +1,59 @@
-<div class="container light">
+<div class="w-auto flex flex-col xl:flex-row justify-center bg-body-color-light p-[20px]">
   <ng-container *ngIf="this.media !== null">
-    <div class="col-3">
-      <h1>{{this.media.Title}}</h1>
-        <div class="row">
+    <div class="flex flex-col w-full md:w-1/3">
+      <h1 class="text-white text-3xl font-bold mb-4">{{this.media.Title}}</h1>
+        <div class="flex flex-wrap flex-row mb-[10px]">
           <ng-container *ngIf="this.media.imdbRating !== -1">
-          <div class="rating">
+          <div class="flex items-center">
             <span class="stars" [style.--rating]="this.media.imdbRating"></span>
-            <span class="score">{{this.media.imdbRating}}</span>
+            <span class="ml-[5px] text-gold text-lg">{{this.media.imdbRating}}</span>
           </div>
           </ng-container>
           <ng-container *ngIf="this.media.imdbRating === -1">
             <p class="value">Rating not available</p>
           </ng-container>
           <div>
-            <button class="like-btn" (click)="this.changeMediaLikeStatus()"><i class="{{this.media.isLiked ? 'fas' : 'far'}} fa-heart"></i></button>
+            <button class="bg-brand-color rounded-full text-white cursor-pointer text-3xl h-12 w-12 ml-4" (click)="this.changeMediaLikeStatus()"><i class="{{this.media.isLiked ? 'fas' : 'far'}} fa-heart"></i></button>
           </div>
         </div>
-      <div class="row">
+      <div class="flex flex-wrap flex-row mb-[10px]">
         <p class="label">Type</p>
         <p class="value">{{this.media.Type}}</p>
       </div>
       <ng-container *ngIf="this.media.Type === 'series'">
-        <div class="row">
+        <div class="flex flex-wrap flex-row mb-[10px]">
           <p class="label">Seasons</p>
           <p class="value">{{this.media.totalSeasons}}</p>
         </div>
       </ng-container>
       <ng-container *ngIf="this.media.Type === 'movie'">
-        <div class="row">
+        <div class="flex flex-wrap flex-row mb-[10px]">
           <p class="label">Duration</p>
           <p class="value">{{this.media.Runtime}}</p>
         </div>
       </ng-container>
-      <div class="row">
+      <div class="flex flex-wrap flex-row mb-[10px]">
         <p class="label">Genre</p>
         <p class="value">{{this.media.Genre}}</p>
       </div>
-      <div class="row">
+      <div class="flex flex-wrap flex-row mb-[10px]">
         <p class="label">Year</p>
         <p class="value">{{this.media.Year}}</p>
       </div>
-      <div class="row">
+      <div class="flex flex-wrap flex-row mb-[10px]">
         <p class="label">Director</p>
         <p class="value">{{this.media.Director}}</p>
       </div>
-      <div class="row">
+      <div class="flex flex-wrap flex-row mb-[10px]">
         <p class="label">Actors</p>
         <p class="value">{{this.media.Actors}}</p>
       </div>
       <ng-container *ngIf="this.media?.Plot !== 'N/A'">
-          <p class="plot">{{this.media.Plot}}</p>
+          <p class="value w-[80%]">{{this.media.Plot}}</p>
       </ng-container>
     </div>
-    <div class="col-4 center">
-      <img class="poster" src="{{this.media.Poster}}" alt="Poster">
+    <div class="flex flex-col w-full md:w-1/5 items-center">
+      <img class="m-[20px] w-3/4 rounded-lg" src="{{this.media.Poster}}" alt="Poster">
     </div>
   </ng-container>
   <ng-container *ngIf="this.media === null">

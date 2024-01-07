@@ -1,0 +1,22 @@
+.label {
+  @apply text-white text-lg font-bold mr-2 uppercase;
+}
+
+.value {
+  @apply text-white text-lg;
+}
+
+/* Star rating CSS */
+
+.stars {
+  @apply inline-block text-2xl mr-[10px];
+}
+
+.stars::after {
+  --percentage: calc(var(--rating) / 5 * 100%);
+  content: "\2605\2605\2605\2605\2605";
+  background: linear-gradient(90deg, gold var(--percentage), grey var(--percentage));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}

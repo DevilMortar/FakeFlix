@@ -8,7 +8,7 @@ import {UserService} from "../user.service";
 @Component({
   selector: 'app-media-detail',
   templateUrl: './media-detail.component.html',
-  styleUrls: ['./media-detail.component.css']
+  styleUrls: ['./media-detail.component.scss']
 })
 export class MediaDetailComponent {
   media: MediaDetail | null = null; // The media detail to display

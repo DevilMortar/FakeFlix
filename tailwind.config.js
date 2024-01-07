@@ -15,6 +15,7 @@ module.exports = {
         'gray': 'hsl(0, 0%,75%)',
         'white': 'hsl(0, 0%, 100%)',
         'pink': 'hsl(296, 100%, 50%)',
+        'gold': 'rgb(255, 215, 0)',
       },
     },
   },
