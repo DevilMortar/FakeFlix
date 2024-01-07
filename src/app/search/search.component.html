@@ -3,10 +3,10 @@
 </head>
 
 <form (ngSubmit)="onSubmit()" [formGroup]="searchForm">
-  <div class="wrap">
-    <div class="search">
-      <input type="text" class="searchTerm" placeholder="What are you looking for?" [formControl]="searchCtrl">
-      <button type="submit" [disabled]="" class="searchButton">🔎</button>
+  <div class="flex w-full justify-center">
+    <div class="relative mt-4 mb-0 mx-8 flex h-8 w-full xl:w-3/4">
+      <input type="text" class="text-base h-18 w-full border-2 border-brand-color border-r-0 p-2 rounded-l-md outline-none text-header-color focus:text-black" placeholder="What are you looking for?" [formControl]="searchCtrl">
+      <button type="submit" [disabled]="" class="w-[40px] h-full border-[1px] border-solid border-brand-color bg-brand-color text-white rounded-r-[5px] cursor-pointer text-[20px]">🔎</button>
     </div>
   </div>
 </form>
@@ -15,15 +15,15 @@
   <app-card-container [mediaArray]="mediaArray" [loaded]="this.dataFetched"></app-card-container>
 </ng-container>
 
-<div class="container">
+<div class="flex justify-center">
   <ng-container *ngIf="this.mediaArray.length == 0 && this.dataFetched && this.searchCtrl.value !== ''">
-    <div class="no-results">
-      <p>No results for your search : "{{this.searchCtrl.value}}"</p>
-      <p>Suggestions :</p>
-      <ul>
-        <li>Check your spelling</li>
-        <li>Try a different keyword</li>
-        <li>Try a more general keyword</li>
+    <div class="mt-6 text-white">
+      <p class="mb-2">No results for your search : "{{this.searchCtrl.value}}"</p>
+      <p class="underline">Suggestions :</p>
+      <ul class="p-0">
+        <li class="mb-[5px] ml-[30px] list-disc">Check your spelling</li>
+        <li class="mb-[5px] ml-[30px] list-disc">Try a different keyword</li>
+        <li class="mb-[5px] ml-[30px] list-disc">Try a more general keyword</li>
       </ul>
     </div>
   </ng-container>
