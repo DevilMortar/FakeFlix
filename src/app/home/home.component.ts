@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import {Media} from "../media";
-import {DataService} from "../data.service";
 
 @Component({
   selector: 'app-home',
