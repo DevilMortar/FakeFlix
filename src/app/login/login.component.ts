@@ -6,9 +6,10 @@ import {UserService} from "../user.service";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+  nUsers:number = 4;
 
   constructor(private userService: UserService, private router: Router) { }
 

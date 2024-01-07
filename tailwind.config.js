@@ -12,6 +12,7 @@ module.exports = {
         'body-color': 'hsl(0, 0%, 10%)',
         'body-color-light': 'hsl(0, 0%, 15%)',
         'black': 'hsl(0, 0%, 0%)',
+        'gray': 'hsl(0, 0%,75%)',
         'white': 'hsl(0, 0%, 100%)',
         'pink': 'hsl(296, 100%, 50%)',
       },
