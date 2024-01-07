@@ -1,14 +1,14 @@
-<article class="card" (click)="onCardClick()">
+<article class="card w-[8.75rem] h-[11rem] m-0 xl:w-[15.625rem] xl:h-[20rem] overflow-hidden rounded-[0.625rem] shadow-md transform duration-150 hover:cursor-pointer hover:scale-105" (click)="onCardClick()">
   <img
-    class="card-background"
+    class="object-cover object-center max-w-full h-full"
     src="{{this.media?.Poster}}"
     width="1920"
     height="2193"
   />
-  <div class="card-content">
-      <h2 class="card-title">{{this.media?.Title}}</h2>
-      <hr>
-      <p class="card-description">
+  <div class="sticky bottom-0 flex flex-col justify-between self-end bg-gradient-to-b from-transparent to-black p-2">
+      <h2 class="text-lg xl:text-2xl font-bold text-white leading-tight line-clamp-3">{{this.media?.Title}}</h2>
+      <hr class="m-0 h-[5px] border-none bg-brand-color">
+      <p class="text-base text-white pt-1 ">
         {{this.media?.Year}} | {{this.media?.Type}}
       </p>
   </div>
