@@ -4,7 +4,7 @@ import {Media} from "../media";
 @Component({
   selector: 'app-slide-card-container',
   templateUrl: './slide-card-container.component.html',
-  styleUrls: ['./slide-card-container.component.css']
+  styleUrls: ['./slide-card-container.component.scss']
 })
 export class SlideCardContainerComponent {
   @Input() mediaArray: Array<Media> = new Array<Media>(); // Array of media to be displayed
@@ -17,8 +17,8 @@ export class SlideCardContainerComponent {
 
   ngOnInit(): void {
     this.container = this.el.nativeElement.querySelector('.slide-card-container');
-    this.leftButton = this.el.nativeElement.querySelector('.btn-slide-left');
-    this.rightButton = this.el.nativeElement.querySelector('.btn-slide-right');
+    this.leftButton = this.el.nativeElement.querySelector('#btn-slide-left');
+    this.rightButton = this.el.nativeElement.querySelector('#btn-slide-right');
     this.container.addEventListener('scroll', () => this.changeSlideButtonVisibility());
   }
 

@@ -4,9 +4,9 @@
   </div>
 </ng-container>
 
-<div class="main">
-    <button (click)="this.slide(true)" class="btn-slide btn-slide-left"><i class="fas fa-chevron-left"></i></button>
-    <button (click)="this.slide(false)" class="btn-slide btn-slide-right"><i class="fas fa-chevron-right"></i></button>
+<div class="relative group">
+    <button id="btn-slide-left" (click)="this.slide(true)" class="btn-slide group-hover:opacity-100 left-0"><i class="fas fa-chevron-left"></i></button>
+    <button id="btn-slide-right" (click)="this.slide(false)" class="btn-slide group-hover:opacity-100 right-0"><i class="fas fa-chevron-right"></i></button>
   <div class="slide-card-container">
     <ng-container *ngFor="let media of this.mediaArray">
       <app-media [media]="media"></app-media>
