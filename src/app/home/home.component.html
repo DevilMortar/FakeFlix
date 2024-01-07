@@ -2,13 +2,13 @@
   <title>Home - Fakeflix</title>
 </head>
 
-<div class="frame">
-  <img src="../../assets/images/banner.png" alt="banner">
+<div class="w-full overflow-hidden">
+  <img src="../../assets/images/banner.png" alt="banner" class="object-cover object-center w-full max-h-full">
 </div>
 
-<h1>The Star Wars saga</h1>
+<h1 class="text-3xl text-[--white] leading-[1.1] mt-[10px] ml-[30px] mb-0">The Star Wars saga</h1>
 <!-- <app-slide-card-container [mediaArray]="this.mediaArray"></app-slide-card-container> -->
 <app-slide-card-container [mediaArray]="mediaArrayA" [loaded]="dataFetchedA"></app-slide-card-container>
 
-<h1>The Harry Potter saga</h1>
+<h1 class="text-3xl text-[--white] leading-[1.1] mt-[10px] ml-[30px] mb-0">The Harry Potter saga</h1>
 <app-slide-card-container [mediaArray]="this.mediaArrayB" [loaded]="dataFetchedB"></app-slide-card-container>
