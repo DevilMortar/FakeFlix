@@ -1,28 +1,39 @@
-<nav>
-  <img src="../../assets/images/logo.png" alt="logo" class="logo">
-  <img src="../../assets/images/f.ico" alt="logo" class="mini-logo">
-  <div class="row">
-    <div class="nav-links-container">
-      <ul class="nav-ul">
-        <li><a routerLinkActive="active" routerLink="/home" class="link">Home</a></li>
-        <li><a routerLinkActive="active" routerLink="/search" class="link">Search</a></li>
-        <li><a routerLinkActive="active" routerLink="/watchlist" class="link">Watchlist</a></li>
-        <li><a routerLinkActive="active" routerLink="/about" class="link">About</a></li>
-      </ul>
+<nav class="bg-header-color w-full border-b block z-50">
+  <div class="flex flex-wrap items-center justify-between mx-4 p-2 xl:p-4">
+    <!-- Logo -->
+    <a href="https://flowbite.com/" class="items-center space-x-3 rtl:space-x-reverse hidden xl:flex">
+      <img src="../../assets/images/logo.png" class="h-12" alt="Flowbite Logo">
+    </a>
+    <!-- Mini logo for mobile -->
+    <a href="https://flowbite.com/" class="flex items-center space-x-3 xl:hidden">
+      <img src="../../assets/images/f.ico" class="h-12" alt="Flowbite Logo">
+    </a>
+    <div class="flex order-2 space-x-0 rtl:space-x-reverse">
+      <!-- Profile -->
+      <div class="w-[65px] h-[65px] rounded-full border-2 border-brand-color">
+        <a routerLink="/login">
+          <img src="{{this.userPicture}}" alt="user" class="rounded-full w-full h-full object-cover object-center"/>
+        </a>
+      </div>
     </div>
-    <div class="frame">
-      <a routerLink="/login">
-        <img src="{{this.userPicture}}" alt="user" class="pp"/>
-      </a>
+    <!-- Navbar links -->
+    <div class="items-center justify-between w-auto hidden xl:flex order-1" id="navbar-sticky">
+      <ul class="flex p-0 mt-0 font-medium rounded-lg bg-gray-50 space-x-6 rtl:space-x-reverse flex-row">
+        <li>
+          <a routerLink="/home" routerLinkActive="active bg-brand-color" class="block py-2 px-3 text-white rounded hover:bg-brand-color">Home</a>
+        </li>
+        <li>
+          <a routerLink="/search" routerLinkActive="active bg-brand-color" class="block py-2 px-3 text-white rounded hover:bg-brand-color">Search</a>
+        </li>
+        <li>
+          <a routerLink="/watchlist" routerLinkActive="active bg-brand-color" class="block py-2 px-3 text-white rounded hover:bg-brand-color">Watch List</a>
+        </li>
+        <li>
+          <a routerLink="/about" routerLinkActive="active bg-brand-color" class="block py-2 px-3 text-white rounded hover:bg-brand-color">About</a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
 
-<div class="footer-links-container full-width">
-  <ul class="nav-ul">
-    <li><a routerLinkActive="active" routerLink="/home" class="link-fa"><i class="fa fa-home"></i></a></li>
-    <li><a routerLinkActive="active" routerLink="/search" class="link-fa"><i class="fa fa-search"></i></a></li>
-    <li><a routerLinkActive="active" routerLink="/watchlist" class="link-fa"><i class="fa fa-list"></i></a></li>
-    <li><a routerLinkActive="active" routerLink="/about" class="link-fa"><i class="fa fa-info"></i></a></li>
-  </ul>
-</div>
+

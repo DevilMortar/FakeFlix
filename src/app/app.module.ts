@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { SlideCardContainerComponent } from './slide-card-container/slide-card-container.component';
 import { CardContainerComponent } from './card-container/card-container.component';
+import { BottomNavComponent } from './bottom-nav/bottom-nav.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CardContainerComponent } from './card-container/card-container.componen
     LoginComponent,
     HomeComponent,
     SlideCardContainerComponent,
-    CardContainerComponent
+    CardContainerComponent,
+    BottomNavComponent
   ],
   imports: [
     BrowserModule,
