@@ -3,11 +3,11 @@ import {Media} from "../media";
 import {DataService} from "../data.service";
 
 @Component({
-  selector: 'app-home-demo',
-  templateUrl: './home-demo.component.html',
-  styleUrls: ['./home-demo.component.css']
+  selector: 'app-home-section',
+  templateUrl: './home-section.component.html',
+  styleUrls: ['./home-section.component.css']
 })
-export class HomeDemoComponent implements OnInit {
+export class HomeSectionComponent implements OnInit {
   @Input() title:string = ''; // Title of the section
   @Input() search:string = ''; // Search term to use in the API call
   mediaArray: Array<Media> = new Array<Media>(); // Array of Media objects

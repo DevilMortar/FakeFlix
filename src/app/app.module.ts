@@ -16,7 +16,7 @@ import { HomeComponent } from './home/home.component';
 import { SlideCardContainerComponent } from './slide-card-container/slide-card-container.component';
 import { CardContainerComponent } from './card-container/card-container.component';
 import { BottomNavComponent } from './bottom-nav/bottom-nav.component';
-import { HomeDemoComponent } from './home-demo/home-demo.component';
+import { HomeSectionComponent } from './home-section/home-section.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,7 @@ import { HomeDemoComponent } from './home-demo/home-demo.component';
     SlideCardContainerComponent,
     CardContainerComponent,
     BottomNavComponent,
-    HomeDemoComponent
+    HomeSectionComponent
   ],
   imports: [
     BrowserModule,
