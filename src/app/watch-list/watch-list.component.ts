@@ -6,7 +6,7 @@ import {DataService} from "../data.service";
 @Component({
   selector: 'app-watch-list',
   templateUrl: './watch-list.component.html',
-  styleUrls: ['./watch-list.component.css']
+  styleUrls: ['./watch-list.component.scss']
 })
 export class WatchListComponent {
   mediaArray : Array<Media> = new Array<Media>();
